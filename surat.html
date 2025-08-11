@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebuah Pesan Untukmu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="page-background">
+
+    <main class="card-container">
+        <div class="main-card">
+            <div class="card-image-panel player-panel">
+                <div class="music-player">
+                    <img src="images/album-art1.jpg" alt="Album Art" id="album-art" class="album-art">
+                    <div class="song-info">
+                        <h3 id="song-title">Judul Lagu 1</h3>
+                        <p id="song-artist">Nama Artis 1</p>
+                    </div>
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="controls">
+                        <button id="prev" class="control-btn"><i class="fas fa-backward"></i></button>
+                        <button id="play" class="control-btn play-btn"><i class="fas fa-play"></i></button>
+                        <button id="next" class="control-btn"><i class="fas fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-content-panel scrollable">
+                <section id="surat">
+                    <h2>Sepucuk Surat Digital</h2>
+                    <p>Hai [Nama Teman],</p>
+                    <p>Aku tulis ini khusus untukmu. Mungkin terasa sedikit berlebihan, tapi aku ingin kamu tahu betapa bangganya aku dengan semua pencapaianmu. Melangkah ke dunia baru di perantauan itu butuh keberanian besar, dan kamu memilikinya.</p>
+                    <p>Akan ada hari-hari berat, aku yakin itu. Tapi akan ada lebih banyak hari yang indah. Semoga playlist di samping ini bisa menemanimu, saat kamu butuh semangat atau sekadar teman di kala sepi.</p>
+                    <p>Klik tombol play dan baca surat ini pelan-pelan, ya.</p>
+                    <p class="signature">Dari sahabatmu,<br>[Nama Kamu]</p>
+                </section>
+                
+                 <div class="card-navigation space-between">
+                    <a href="index.html" class="nav-link">&laquo; Kembali ke Cover</a>
+                    <a href="galeri.html" class="nav-link">Lihat Galeri &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <audio id="audio" src=""></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

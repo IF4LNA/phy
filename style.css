@@ -1,0 +1,306 @@
+/* --- PENGATURAN GLOBAL & VARIABEL --- */
+:root {
+    /* Color Palette Baru (Earthy & Artistic) */
+    --primary-color: #5c8b7e; /* Oranye-bata yang hangat */
+    --accent-color: #b097c9ff;   /* Aksen oranye yang lebih tua */
+    --background-color: #5c8b7e; /* Latar belakang krem/off-white */
+    --card-background: #FFFFFF;
+    --text-color: #3D352E;      /* Coklat tua untuk teks */
+    --player-bg: #b097c9ff;      /* Biru-tua yang diredam untuk player */
+    --player-text: #5c8b7e;     /* Kuning mustard untuk teks/progress bar */
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+.page-background {
+    /* Gambar latar belakang halaman, ini adalah dekorasi */
+    background-image: url('images/lavender.png');
+
+        /* Properti lain untuk hasil terbaik */
+    background-position: center; /* Posisi gambar di tengah */
+    background-repeat: no-repeat; /* Jangan ulangi gambar */
+    background-attachment: fixed; /* Gambar diam saat di-scroll */
+}
+
+/* .header-promo {
+    background-image: url('images/pemandangan-kota.jpg');
+    background-size: cover;
+    background-position: center;
+} */
+
+/* (Kode global lainnya tetap sama...) */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.page-background { font-family: var(--body-font); background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
+.card-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+.main-card { display: flex; width: 100%; max-width: 900px; height: 80vh; max-height: 550px; background: var(--card-background); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid rgba(255,255,255,0.8); opacity: 0; transform: translateY(30px) scale(0.95); animation: floatIn 1.2s ease-out 0.5s forwards; }
+@keyframes floatIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* --- PANEL KIRI BARU (PLAYER PANEL) --- */
+.card-image-panel.player-panel {
+    flex-basis: 40%;
+    background-color: var(--player-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--player-text);
+    transition: all 0.4s ease;
+}
+
+/* (Style untuk .card-title-panel dan .card-image-panel biasa tetap sama) */
+.card-image-panel img { width: 100%; height: 100%; object-fit: cover; }
+.card-title-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; background-color: var(--primary-color); color: white; }
+.card-title-panel h1 { font-family: var(--heading-font); font-weight: 700; font-size: 3.5rem; line-height: 1.1; }
+
+
+/* --- UI MUSIC PLAYER DI DALAM PANEL KIRI --- */
+.music-player {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+.album-art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.song-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+.song-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    color: var(--player-text);
+}
+.progress-container {
+    background-color: #3e5369;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0;
+    height: 8px;
+    width: 100%;
+}
+.progress {
+    background-color: var(--player-text);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--player-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.control-btn.play-btn {
+    font-size: 2rem;
+}
+.control-btn:hover {
+    color: #fff;
+}
+
+
+/* --- PANEL KANAN (KONTEN SURAT) --- */
+.card-content-panel {
+    flex-basis: 60%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.card-content-panel.scrollable {
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+.scrollable::-webkit-scrollbar { width: 8px; }
+.scrollable::-webkit-scrollbar-track { background: #e9e5e1; }
+.scrollable::-webkit-scrollbar-thumb { background: #d3ccc5; }
+
+.card-content-panel section { padding-bottom: 1rem; }
+.card-content-panel h2 { font-weight: 600; font-size: 1rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 1px; }
+.card-content-panel p.signature { font-style: italic; text-align: right; margin-top: 2rem; }
+
+/* (Sisa style navigasi sama) */
+.card-navigation { margin-top: auto; padding-top: 1rem; text-align: center; border-top: 1px solid #e9e5e1; }
+.card-navigation.space-between { display: flex; justify-content: space-between; }
+.cta-button, .nav-link { font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+.cta-button { background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 50px; display: inline-block; }
+.cta-button:hover { background-color: var(--accent-color); transform: scale(1.05); }
+.nav-link { color: var(--primary-color); }
+.nav-link:hover { color: var(--accent-color); }
+
+/*
+========================================
+PERBAIKAN TAMPILAN MOBILE DI SINI
+========================================
+*/
+@media (max-width: 768px) {
+    .card-container {
+        padding: 0; 
+        align-items: flex-start;
+    }
+    
+    .main-card {
+        flex-direction: column; 
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        min-height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .card-image-panel.player-panel {
+        flex-basis: auto;
+        min-height: auto;
+        padding: 2rem 1.5rem;
+        border-radius: 0;
+    }
+
+    .card-content-panel {
+        flex-basis: auto;
+        padding: 2.5rem 1.5rem;
+        flex-grow: 1; 
+        overflow-y: auto;
+    }
+
+    .music-player {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+/*
+========================================
+PENERAPAN FONT BARU UNTUK HALAMAN COVER
+========================================
+*/
+.cover-content h2 {
+    font-family: var(--font-body-cover);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.cover-content h1 {
+    font-family: var(--font-heading-cover);
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.cover-content .recipient-name {
+    font-family: var(--font-body-cover);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/*
+========================================
+PERBAIKAN TAMPILAN MOBILE
+========================================
+*/
+@media (max-width: 768px) {
+    .card-container { padding: 0; align-items: flex-start; }
+    .main-card { flex-direction: column; width: 100%; height: 100%; max-height: none; min-height: 100vh; margin: 0; border-radius: 0; box-shadow: none; }
+    .card-image-panel { flex-basis: 200px; min-height: 200px; }
+    .card-image-panel.player-panel { flex-basis: auto; min-height: 300px; padding: 1.5rem; border-radius: 0; }
+    .card-content-panel { flex-basis: auto; padding: 2.5rem 1.5rem; flex-grow: 1; overflow-y: auto; }
+    .music-player { max-width: 280px; margin: 0 auto; }
+    
+    /* Penyesuaian font di mobile */
+    .cover-content h1 { font-size: 3rem; }
+    .cover-content .recipient-name { font-size: 1.3rem; }
+}
+
+/*
+========================================
+STYLING & ANIMASI CAROUSEL DI PANEL KANAN
+========================================
+*/
+.panel-as-carousel {
+    padding: 0;
+    justify-content: center; /* Menengahkan carousel jika tingginya lebih */
+    overflow: hidden; /* Penting untuk menyembunyikan item lain */
+}
+
+.panel-as-carousel .carousel-container {
+    /* (Jumlah item asli + 1) * 100% */
+    /* Contoh: 4 item asli + 1 duplikat = 5 item */
+    width: 500%; 
+    height: auto;
+    display: flex;
+    position: relative;
+    animation: slideShow 25s linear infinite;
+}
+
+.carousel-item {
+    width: 20%; /* 100% / 5 item = 20% per item */
+    padding: 2.5rem; /* Memberi ruang di dalam item */
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-item p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Pindahkan navigasi ke dalam panel carousel */
+.panel-as-carousel .card-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+}
+
+
+/* Definisi animasi pergeseran */
+@keyframes slideShow {
+    0% { transform: translateX(0%); }
+    15% { transform: translateX(0%); }
+    25% { transform: translateX(-20%); }
+    40% { transform: translateX(-20%); }
+    50% { transform: translateX(-40%); }
+    65% { transform: translateX(-40%); }
+    75% { transform: translateX(-60%); }
+    90% { transform: translateX(-60%); }
+    100% { transform: translateX(-80%); }
+}
