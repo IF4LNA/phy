@@ -1,9 +1,9 @@
 // Data Lagu (Kamu bisa sesuaikan di sini)
 const songs = [
     {
-        title: 'Judul Lagu 1', // TODO: Ganti judul lagu
-        artist: 'Nama Artis 1', // TODO: Ganti nama artis
-        audioSrc: 'audio/lagu1.mp3', // TODO: Pastikan nama file cocok
+        title: 'Kau Rumahku', // TODO: Ganti judul lagu
+        artist: 'Raissa Anggiani', // TODO: Ganti nama artis
+        audioSrc: 'audio/Raissa Anggiani (Rai) - Kau Rumahku.mp3', // TODO: Pastikan nama file cocok
         artSrc: 'images/rob.png' // TODO: Siapkan gambar cover
     },
     {
