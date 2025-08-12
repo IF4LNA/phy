@@ -7,8 +7,8 @@ const songs = [
         artSrc: 'images/rob.png' // TODO: Siapkan gambar cover
     },
     {
-        title: 'Judul Lagu 2', // TODO: Ganti judul lagu
-        artist: 'Nama Artis 2', // TODO: Ganti nama artis
+        title: 'belum ada lagu', // TODO: Ganti judul lagu
+        artist: 'maaf aku bingung pilih lagu apa wkwk', // TODO: Ganti nama artis
         audioSrc: 'audio/lagu2.mp3', // TODO: Pastikan nama file cocok
         artSrc: 'images/fotoin aku.png' // TODO: Siapkan gambar cover
     }

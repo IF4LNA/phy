@@ -304,3 +304,10 @@ STYLING & ANIMASI CAROUSEL DI PANEL KANAN
     90% { transform: translateX(-60%); }
     100% { transform: translateX(-80%); }
 }
+
+.cover-logo {
+    display: block;
+    width: 100px; /* Atur ukuran logo yang Anda inginkan */
+    height: auto;
+    margin: 20px 0; /* Memberi jarak vertikal (atas & bawah) pada logo */
+}
